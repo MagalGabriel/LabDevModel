@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <nav class="navbar navbar-expand-lg bg-primary text-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-light" href="#">Sistema de Agendamentos</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link active text-light" aria-current="page" href="/">Cadastrar</a>
+                            <a class="nav-link text-light" href="/consulta">Consultar</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="text-start fs-5">Editar</p>
+            <p class="text-start fs-6">Exemplo de Edição</p>
+        </div>
+    </div>
+            <form action="/atualizar" method="post">
+            {{#each posts}}
+                {{#dataValues}} 
+                    <div class="mb-3">
+                        <div class="col">
+                            Nome:
+                            <input type="hidden" id="id" name="id" value="{{id}}">
+                            <input type="text" class="form-control" id="nome" name="nome" value="{{nome}}">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="col">
+                            Endereço:
+                            <input type="text" class="form-control" id="endereco" name="endereco" value="{{endereco}}">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="col">
+                            Bairro:
+                            <input type="text" class="form-control" id="bairro" name="bairro" value="{{bairro}}">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="col">
+                            Cep:
+                            <input type="text" class="form-control" id="cep" name="cep" value="{{cep}}">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="col">
+                            Cidade:
+                            <input type="text" class="form-control" id="cidade" name="cidade" value="{{cidade}}">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="col">
+                            Estado:
+                            <input type="text" class="form-control" id="estado" name="estado" value="{{estado}}">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="col">
+                            Telefone:
+                            <input type="text" class="form-control" id="telefone" name="telefone" value="{{telefone}}">
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <div class="col">
+                            Celular:
+                            <input type="text" class="form-control" id="celular" name="celular" value="{{celular}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary">Atualizar</button>
+                        </div>
+                        {{!-- <div class="col">
+                            <button type="button" class="btn btn-primary">Cancelar</button>
+                        </div> --}}
+                    </div>
+                {{/dataValues}}
+            {{/each}}
+            </form>
+</div>
